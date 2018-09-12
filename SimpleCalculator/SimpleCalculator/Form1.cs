@@ -21,8 +21,14 @@ namespace SimpleCalculator
             InitializeComponent();
         }
 
+        private CalculatorReference.CalculatorSoap calcRef;
+
+        
+
         private void frmCalculator_Load(object sender, EventArgs e)
         {
+            calcRef = new CalculatorReference.CalculatorSoapClient();
+
             btnOne.Click += new EventHandler(btn_Click);
             btnTwo.Click += new EventHandler(btn_Click);
             btnThree.Click += new EventHandler(btn_Click);
@@ -35,6 +41,8 @@ namespace SimpleCalculator
             btnZero.Click += new EventHandler(btn_Click);
             btnDot.Click += new EventHandler(btn_Click);
         }
+
+      
 
         void btn_Click(object sender, EventArgs e)
         {
@@ -150,8 +158,9 @@ namespace SimpleCalculator
 
         private void btnEqual_Click(object sender, EventArgs e)
         {
+            
             operand2 = txtInput.Text;
-
+            
             double opr1, opr2;
             double.TryParse(operand1, out opr1);
             double.TryParse(operand2, out opr2);
@@ -159,21 +168,21 @@ namespace SimpleCalculator
             switch (operation)
             {
                 case '+':
-                    result = (opr1 + opr2).ToString();
+                    result = calcRef.Add(opr1,opr2).ToString();
                     break;
 
                 case '-':
-                    result = (opr1 - opr2).ToString();
+                    result = calcRef.Subtrct(opr1,opr2).ToString();
                     break;
 
                 case '*':
-                    result = (opr1 * opr2).ToString();
+                    result = calcRef.Multiply(opr1,opr2).ToString();
                     break;
 
                 case '/':
                     if (opr2 != 0)
                     {
-                        result = (opr1 / opr2).ToString();
+                        result = calcRef.Divide(opr1,opr2).ToString();
                     }
                     else
                     {
