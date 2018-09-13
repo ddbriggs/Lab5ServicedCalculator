@@ -10,6 +10,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCalculator", "SimpleC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorService", "CalculatorService\CalculatorService.csproj", "{FAA6D1FC-A687-44F8-87B9-BFBB0BF96AF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCalculations", "TestCalculations\TestCalculations.csproj", "{D380C32C-8110-4298-8F4B-D3DA26837889}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FAA6D1FC-A687-44F8-87B9-BFBB0BF96AF4} = {FAA6D1FC-A687-44F8-87B9-BFBB0BF96AF4}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +29,10 @@ Global
 		{FAA6D1FC-A687-44F8-87B9-BFBB0BF96AF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAA6D1FC-A687-44F8-87B9-BFBB0BF96AF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAA6D1FC-A687-44F8-87B9-BFBB0BF96AF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D380C32C-8110-4298-8F4B-D3DA26837889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D380C32C-8110-4298-8F4B-D3DA26837889}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D380C32C-8110-4298-8F4B-D3DA26837889}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D380C32C-8110-4298-8F4B-D3DA26837889}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

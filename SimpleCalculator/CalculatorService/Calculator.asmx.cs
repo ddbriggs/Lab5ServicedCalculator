@@ -30,12 +30,28 @@ namespace CalculatorService
         [WebMethod]
         public double Multiply(double f1, double f2)
         {
-            return f1 * f2; 
+            return f1 * f2;
         }
         [WebMethod]
         public double Divide(double f1, double f2)
         {
             return f1 / f2;
         }
+        [WebMethod]
+        public double SqrRoot(double f1)
+        {
+            return Math.Sqrt(f1);
+        }
+        [WebMethod]
+        public double Halve(double f1)
+        {
+            return (f1 / 2);
+        }
+        [WebMethod]
+        public double Quarter(double f1)
+        {
+            return (f1 / 4);
+        }
+       
     }
 }
