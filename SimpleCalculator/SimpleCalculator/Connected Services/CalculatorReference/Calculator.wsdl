@@ -62,6 +62,48 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SqrRoot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="f1" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SqrRootResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SqrRootResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Halve">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="f1" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HalveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HalveResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Quarter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="f1" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuarterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QuarterResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="AddSoapIn">
@@ -88,6 +130,24 @@
   <wsdl:message name="DivideSoapOut">
     <wsdl:part name="parameters" element="tns:DivideResponse" />
   </wsdl:message>
+  <wsdl:message name="SqrRootSoapIn">
+    <wsdl:part name="parameters" element="tns:SqrRoot" />
+  </wsdl:message>
+  <wsdl:message name="SqrRootSoapOut">
+    <wsdl:part name="parameters" element="tns:SqrRootResponse" />
+  </wsdl:message>
+  <wsdl:message name="HalveSoapIn">
+    <wsdl:part name="parameters" element="tns:Halve" />
+  </wsdl:message>
+  <wsdl:message name="HalveSoapOut">
+    <wsdl:part name="parameters" element="tns:HalveResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuarterSoapIn">
+    <wsdl:part name="parameters" element="tns:Quarter" />
+  </wsdl:message>
+  <wsdl:message name="QuarterSoapOut">
+    <wsdl:part name="parameters" element="tns:QuarterResponse" />
+  </wsdl:message>
   <wsdl:portType name="CalculatorSoap">
     <wsdl:operation name="Add">
       <wsdl:input message="tns:AddSoapIn" />
@@ -104,6 +164,18 @@
     <wsdl:operation name="Divide">
       <wsdl:input message="tns:DivideSoapIn" />
       <wsdl:output message="tns:DivideSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SqrRoot">
+      <wsdl:input message="tns:SqrRootSoapIn" />
+      <wsdl:output message="tns:SqrRootSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Halve">
+      <wsdl:input message="tns:HalveSoapIn" />
+      <wsdl:output message="tns:HalveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Quarter">
+      <wsdl:input message="tns:QuarterSoapIn" />
+      <wsdl:output message="tns:QuarterSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="CalculatorSoap" type="tns:CalculatorSoap">
@@ -144,6 +216,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SqrRoot">
+      <soap:operation soapAction="http://tempuri.org/SqrRoot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Halve">
+      <soap:operation soapAction="http://tempuri.org/Halve" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Quarter">
+      <soap:operation soapAction="http://tempuri.org/Quarter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="CalculatorSoap12" type="tns:CalculatorSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -176,6 +275,33 @@
     </wsdl:operation>
     <wsdl:operation name="Divide">
       <soap12:operation soapAction="http://tempuri.org/Divide" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SqrRoot">
+      <soap12:operation soapAction="http://tempuri.org/SqrRoot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Halve">
+      <soap12:operation soapAction="http://tempuri.org/Halve" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Quarter">
+      <soap12:operation soapAction="http://tempuri.org/Quarter" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
